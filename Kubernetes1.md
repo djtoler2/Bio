@@ -77,12 +77,16 @@ _________________________________________________
 ##### _Monitor termination notices_: 
 > ##### AWS recommends us to poll the termination endpoint at least every 5 seconds. We do this to get immediate notice of a pending termination.
 
-##### _Use preStop Hook_: Once we’re aware of a termination notice, our preStop Hook script will run. This script will make sure to save a users session and save all critical data to our isolated db. 
+##### _Use preStop Hook_: 
+> ##### Once we’re aware of a termination notice, our preStop Hook script will run. This script will make sure to save a users session and save all critical data to our isolated db. 
 
-##### _Taint the Node_: We’ll automatically taint the node, which will cause the current Pods to be evicted and avoid additional Pods from being scheduled on it. The state of the Node will change to NotReady, which will cause the load balancer to stop sending requests to it. When the users on that Node interact with our app, the load balancer will send their next request to a different Node in our cluster
+##### _Taint the Node_: 
+> ##### We’ll automatically taint the node, which will cause the current Pods to be evicted and avoid additional Pods from being scheduled on it. The state of the Node will change to NotReady, which will cause the load balancer to stop sending requests to it. When the users on that Node interact with our app, the load balancer will send their next request to a different Node in our cluster
 
-##### _Reschedule Pods_: If there are other Nodes in our cluster available to take the Pods, the Kubernetes scheduler will place the Pods there.
+##### _Reschedule Pods_: 
+> ##### If there are other Nodes in our cluster available to take the Pods, the Kubernetes scheduler will place the Pods there.
 
-##### _Deploy warm Node_: If no other Nodes in the cluster can accept the Pod, we’ll start our warm instance and allow the Pod to be scheduled onto it
+##### _Deploy warm Node_: 
+> ##### If no other Nodes in the cluster can accept the Pod, we’ll start our warm instance and allow the Pod to be scheduled onto it
 
 ##### Using this preemptive Node scheduling strategy, we keep our application highly available while still benefiting from the huge cost savings of spot instances running inside a multi-level fault tolerant infrastructure.
