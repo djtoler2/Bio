@@ -74,7 +74,8 @@ _________________________________________________
 
 ##### Heres how to do it...
 
-##### _Monitor termination notices_: AWS recommends us to poll the termination endpoint at least every 5 seconds. We do this to get immediate notice of a pending termination.
+##### _Monitor termination notices_: 
+> ##### AWS recommends us to poll the termination endpoint at least every 5 seconds. We do this to get immediate notice of a pending termination.
 
 ##### _Use preStop Hook_: Once we’re aware of a termination notice, our preStop Hook script will run. This script will make sure to save a users session and save all critical data to our isolated db. 
 
