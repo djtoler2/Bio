@@ -27,13 +27,16 @@ _________________________________________________
 
 #### _Node level_
 
-> ##### We can scale our resources at the node level by using Karpenter, Cluster Autoscaler or a customized scaling plan based on metrics reported by the Metrics server
+##### We can scale our resources at the node level by using Karpenter, Cluster Autoscaler or a customized scaling plan based on metrics reported by the Metrics server
 
-> ##### _Karpenter_: Using Karpenter, we get a high level of cost efficiency by having our Nodes scaled dynamically based on the needs of unscheduled Pods. For example, at the Pod level, lets say we have a 10 Pod maximim set in our HPA yaml file. As requests to our application increases, our Pods will start to scale out but will be unscheduled since we're running our Node implementations very lean. Once Karpentar sees unscheduled Pods, it'll provision additional strategically configured Nodes for the Pods to run on.
+##### _Karpenter_: 
+> ##### Using Karpenter, we get a high level of cost efficiency by having our Nodes scaled dynamically based on the needs of unscheduled Pods. For example, at the Pod level, lets say we have a 10 Pod maximim set in our HPA yaml file. As requests to our application increases, our Pods will start to scale out but will be unscheduled since we're running our Node implementations very lean. Once Karpentar sees unscheduled Pods, it'll provision additional strategically configured Nodes for the Pods to run on.
 
-> #### _Cluster Auto Scaler_: With Cluster Auto Scaler, we get similar functionality. Using the same example of incoming requests triggering HPA to scale out our Pods, CAS will pick up on this just like Karpentar but will instead select a Node from a pre-defined Node group, that the unscheduled Pods can run on.
+##### _Cluster Auto Scaler_:
+> ##### With Cluster Auto Scaler, we get similar functionality. Using the same example of incoming requests triggering HPA to scale out our Pods, CAS will pick up on this just like Karpentar but will instead select a Node from a pre-defined Node group, that the unscheduled Pods can run on.
 
-> ##### _Custom Scaliing Plan_: We can also use a custom scaling plan that we implement ourselves. In this scenario, we can create Node groups that match our Pod specifications. We'll use Taints to repel all Pods except the ones we want to run on those specific Nodes and we'll use Tolerations on those Pods so they can be allowed onto the Tainted Nodes. After configuring and starting the Nodes, we'll turn them off, keeping them in a standby state until a threshold is reported by Metrics server and we'll use a script to start them automatically. This strategy optimizing costs while keeping that high availability by having "warm" Nodes ready to deploy.
+##### _Custom Scaliing Plan_:
+> ##### We can also use a custom scaling plan that we implement ourselves. In this scenario, we can create Node groups that match our Pod specifications. We'll use Taints to repel all Pods except the ones we want to run on those specific Nodes and we'll use Tolerations on those Pods so they can be allowed onto the Tainted Nodes. After configuring and starting the Nodes, we'll turn them off, keeping them in a standby state until a threshold is reported by Metrics server and we'll use a script to start them automatically. This strategy optimizing costs while keeping that high availability by having "warm" Nodes ready to deploy.
 
 #### _Availability Zone level_
 
