@@ -1,7 +1,7 @@
 ### AWS will send a termination notice and give a 2-minute warning that the spot instance that's currently in use will be repossessed.
 <p align="left"><img src="https://github.com/djtoler2/Bio/blob/main/1cs.PNG" width="500"></p>
 
-### TThe termination notice that AWS sends will instantly trigger a script to run.
+### The termination notice that AWS sends will instantly trigger a script to run.
 ### The script will start the process of moving the Pods to another Node and attempt to keep them available for requests.
 ### Also, the script will immediately "taint" the Node by running the command _"kubectl nodes spot-node-1 terminating=true:NoSchedule"_.
 ---
@@ -20,8 +20,9 @@
 
 ### We can preemptively have a "warm", On-Demand Node pre-configured and "pre-tainted", so it'll be able to run the Pods that just got evicted from the "tainted" Node.
 ### Once the Scheduler determines that there are no Nodes available for the Pods to run on, our script will asynchronously do 2 things:
-#### 1. It will start our "warm", pre-tainted Node and add it to our Cluster.
-#### 2. It will add a "toleration" to both of our evicted Pods that matches the "taint" on our "warm", On-Demand Node.
+> #### _1. It will start our "warm", pre-tainted Node and add it to our Cluster._
+> #### _2. It will add a "toleration" to both of our evicted Pods that matches the "taint" on our "warm", On-Demand Node._
+
 ### Since the On-Demand Node will be "warm", the startup time will be drastically reduced, making it available to accept our evicted Pods within a matter of seconds.
 ### The "taints & tolerations" at this stage will make sure that the Scheduler is only allowed to pair our "warm", On-Demand Node with the recently evicted Pods.
 <p align="left"><img src="https://github.com/djtoler2/Bio/blob/main/cs5.PNG" width="500"></p>
