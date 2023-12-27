@@ -7,6 +7,7 @@
 
 #### The NBA League Office defines how   games are played (in-game rules, penalties, etc)and where teams will play (local broadcast, ESPN, TNT, geographic locations, etc…)  using rule book and having contracts with media outlets, franchises and player organizations. 
 
+---
 
 ### _YAML files = Referee (Communicates the game/system rules to game participants/system components)_
 
