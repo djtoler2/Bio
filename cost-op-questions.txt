@@ -1,0 +1,29 @@
+#Should we schedule Pods on any current Nodes or a new Node?
+#Should we vertically scale Nodes?
+#Should we dynamically modify Pod requirements?
+
+
+#What cpu & memory does the current Pod need to run? 
+#What level of priority do these Pods have?
+#What Pods can they replace?
+#What Pods should they not be able to replace?
+#How long can they wait before they have to be placed?
+#What storage requirements do the Pods have?
+#What network requirements do the Pods have?
+#What nodes can accomodate the current Pods requirements?
+#How many containers are in this Pod?
+#What containers are in this Pod?
+#What processes will be running at any given moment?
+#What do we need to do to safely kill these processes?
+#How long would it take to gracefully shutdown this Pod?
+#How long does it take to start this Pod?
+#How can we optimize how long it takes to start the Pod?
+#How can we optimize the process of the kill process?
+#How does this kill process work?
+#How does PDBs effect automated Pod draining and terminating/evicting?
+#How to automated Pod draining and terminating/evicting while respecting PBD?
+#Handling the resource overlap issue, where both old (terminating) and new pods temporarily consume resources?
+
+#How long does it take a standby Node to start?
+#How much would it cost to have Nodes on standby?
+#What would be attached to the Nodes to that would be a factor in start duration but cost money? 
