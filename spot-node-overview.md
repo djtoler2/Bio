@@ -24,7 +24,8 @@
 
 ### Component Models
 - Load Balancer
-    Distribute request amongst Nodes
+
+  Distribute request amongst Nodes
 - Pods
     Run the containers that process our requests, scale based on metrics and replica count
 - Dummy Pods
