@@ -1,87 +1,63 @@
 ### OBJECTIVE
 - Reduce cost of Kubernetes clusters by running Pods on Spot VMs while ensuring minimum service disruption
 
-### COMPONENTS 
+### SYSTEM COMPONENTS
 - Load Balancer
-- Pods
-- Dummy Pods
-- EBS Volumes
-- Launch Templates
-- Instance Type
-- Spot Nodes
-- OnDemand Nodes
-- Warm OnDemand Nodes
-- Burstable Nodes
-- Spot Fleets
-- AutoScalingGroup
-- Client
-- Server
-- Database
-- CostOp App
-- Scheduler
-- API Server
-- Serverless Functions
+  ##### _Distribute requests amongst Nodes_
 
-### Component Models
-- Load Balancer
-
-  Distribute request amongst Nodes
 - Pods
-  
-    Run the containers that process our requests, scale based on metrics and replica count
+  #####  _Run the containers that process our requests, scale based on metrics and replica count_
+
 - Dummy Pods
-  
-    Occupy space on Nodes and have low priority 
+   ##### _Occupy space on Nodes and have low priority _
+
 - EBS Volumes
-  
-    Detached, cloned or pre-configured from a Spot Node currently being terminated & re-attached or synced to a warm, standby OnDemand Node
+  ##### _ Detached, cloned or pre-configured from a Spot Node currently being terminated & re-attached or synced to a warm, standby OnDemand Node_
   
 - Launch Templates
-  
-    Created programatically from each Spot Node and used to launch warm, standby OnDemand Nodes
+   ##### _Created programatically from each Spot Node and used to launch warm, standby OnDemand Nodes_
+
 - Instance Type
-  
-    While a Node is stopped, its instance type can be dynamically changed to match a terminating Spot Nodes instance type
+   ##### _While a Node is stopped, its instance type can be dynamically changed to match a terminating Spot Nodes instance type_
 
 - Spot Nodes
-  
-    Run Pods at lowest cost and get reposseded when cloud provider needs them back
-- OnDemand Nodes
+   ##### _Run Pods at lowest cost and get reposseded when cloud provider needs them back_
 
-    Run Pods at set cost 
+- OnDemand Nodes
+   ##### _Run Pods at set cost _
+
 - Warm OnDemand Nodes
-  
-    Run Pods at set cost and stay on standby (preconfigured, pre-tainted) to replace terminated Nodes
+   ##### _Run Pods at set cost and stay on standby (preconfigured, pre-tainted) to replace terminated Nodes_
+
 - Burstable Nodes
-  
-    Run Pods at set cost with limited or unlimited dynamic resource provisioning
+   ##### _Run Pods at set cost with limited or unlimited dynamic resource provisioning_
+
 - Spot Fleets
-  
-    A collection of Spot instances we can  strategically configure based on price, resource aggregation, avaiability, location, type..
+   ##### _A collection of Spot instances we can  strategically configure based on price, resource aggregation, avaiability, location, type.._
+
 - AutoScalingGroup
-  
-    Horizontally scale Nodes or Spot Fleets to match desired Spot Node or Spot Fleet availability with current availability 
+   ##### _Horizontally scale Nodes or Spot Fleets to match desired Spot Node or Spot Fleet availability with current availability_ 
+
 - Client
-  
-    Monnitors Spot Nodes for termination notices by polling, update Redis and notifies Server
+   ##### _Monnitors Spot Nodes for termination notices by polling, update Redis and notifies Server_
+
 - Server
-  
-    Get data from Redis, run termination response functions
+    ##### _Get data from Redis, run termination response functions_
+
 - Database
-  
-    Stores the Cluster, Pod & Node data
+    ##### _Stores the Cluster, Pod & Node data_
+
 - CostOp App
-  
-    Run the Client/Server APIs, update Redis
+   ##### _Run the Client/Server APIs, update Redis_
+
 - Scheduler
-  
-    Place newly created Pods on qualifying Nodes
+   ##### _Place newly created Pods on qualifying Nodes_
+
 - API Server
-  
-    Allow Server to get Node & Pod data
+   ##### _Allow Server to get Node & Pod data_
+
 - Serverless Functions
-  
-    Instantly accepts rerouted requests from terminated Nodes
+   ##### _Instantly accepts rerouted requests from terminated Nodes_
 
 ### Interactions
 -Internal
