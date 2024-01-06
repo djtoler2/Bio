@@ -3,7 +3,7 @@
 
 ### SYSTEM COMPONENTS
 * Load Balancer
-  ##### _Distribute requests amongst Nodes_
+* * ##### _Distribute requests amongst Nodes_
 
 - Pods
   #####  _Run the containers that process our requests, scale based on metrics and replica count_
