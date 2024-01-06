@@ -17,6 +17,18 @@
 
 ### SYSTEM COMPONENTS
 
+<table>
+  <tr>
+    <th style="width: 400px;">System Component</th>
+    <th style="width: 300px;">Component Role</th>
+  </tr>
+  <tr>
+    <td>Warm On-Demand Nodes</td>
+    <td>Run Pods at a set cost and are kept on standby (preconfigured, pre-tainted) to replace terminated Nodes</td>
+  </tr>
+  <!-- Add more rows here -->
+</table>
+
 |System Components             | Component Role  |
 |-----|---|
 | Warm On-Demand Nodes   | _Run Pods at a set cost and are kept on standby (preconfigured, pre-tainted) to replace terminated Nodes_    |
