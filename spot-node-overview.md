@@ -2,7 +2,7 @@
 - Reduce cost of Kubernetes clusters by running Pods on Spot VMs while ensuring minimum service disruption
 
 ### SYSTEM COMPONENTS
-- Load Balancer
+* Load Balancer
   ##### _Distribute requests amongst Nodes_
 
 - Pods
