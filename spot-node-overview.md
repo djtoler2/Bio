@@ -14,7 +14,7 @@
 ---
 
 ### SYSTEM COMPONENTS
-##### _These are the main components that interact with each other to trigger the response to a noticed or warning of a pendomg Spot Node termination_
+    ##### _These are the main components that interact with each other to trigger the response to a noticed or warning of a pendomg Spot Node termination_
 
 <table>
   <tr>
