@@ -2,20 +2,11 @@
 - Reduce cost of Kubernetes clusters by running Pods on Spot VMs while ensuring minimum service disruption
 
 ### SYSTEM COMPONENTS
-* Load Balancer
-  * ##### _Distribute requests amongst Nodes_
-
-- Pods
-  #####  _Run the containers that process our requests, scale based on metrics and replica count_
-
-- Dummy Pods
-   ##### _Occupy space on Nodes and have low priority _
-
-- EBS Volumes
-  ##### _ Detached, cloned or pre-configured from a Spot Node currently being terminated & re-attached or synced to a warm, standby OnDemand Node_
-  
-- Launch Templates
-   ##### _Created programatically from each Spot Node and used to launch warm, standby OnDemand Nodes_
+* ##### LOAD BALANCER: _Distribute requests amongst Nodes_
+* ##### PODS: _Run the containers that process our requests, scale based on metrics and replica count_
+* ##### DUMMY PODS: _Occupy space on Nodes and have low priority _
+* ##### EBS VOLUMES: _Detached, cloned or pre-configured from a Spot Node currently being terminated & re-attached or synced to a warm, standby OnDemand Node_
+* ##### LAUNCH TEMPLATES: _Created programatically from each Spot Node and used to launch warm, standby OnDemand Nodes_
 
 - Instance Type
    ##### _While a Node is stopped, its instance type can be dynamically changed to match a terminating Spot Nodes instance type_
