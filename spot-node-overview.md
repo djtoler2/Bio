@@ -22,7 +22,7 @@
     <th style="width: 600px;">System Component</th>
     <th style="width: 250px;">Component Role</th>
   </tr>
-  <tr>
+  <tr style="width: 600px;>
     <td>Warm On-Demand Nodes</td>
     <td>Run Pods at a set cost and are kept on standby (preconfigured, pre-tainted) to replace terminated Nodes</td>
   </tr>
