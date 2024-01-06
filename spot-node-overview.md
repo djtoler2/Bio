@@ -19,8 +19,8 @@
 
 <table>
   <tr>
-    <th style="width: 400px;">System Component</th>
-    <th style="width: 300px;">Component Role</th>
+    <th style="width: 600px;">System Component</th>
+    <th style="width: 250px;">Component Role</th>
   </tr>
   <tr>
     <td>Warm On-Demand Nodes</td>
