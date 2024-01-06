@@ -23,7 +23,7 @@
     <th style="width: 300px;">Component Role</th>
   </tr>
   <tr>
-    <td>Warm On-Demand Nodes</td>
+    <td> Cost Optimization Application</td>
     <td>Run Pods at a set cost and are kept on standby (preconfigured, pre-tainted) to replace terminated Nodes</td>
   </tr>
   <!-- Add more rows here -->
