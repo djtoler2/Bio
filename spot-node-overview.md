@@ -18,7 +18,7 @@
 ### SYSTEM COMPONENTS
 
 |<span style="width:600px">System Component</span>| <span style="width:300px">Component Role</span>  |
-|------------------------------------------------|------------------------------------------------------------------------------------------------------|
+|-------|---|
 | Warm On-Demand Nodes   | _Run Pods at a set cost and are kept on standby (preconfigured, pre-tainted) to replace terminated Nodes_    |
 | Dummy Pods             | _Occupy space on Nodes and have low priority_                                                          |
 | GRPC Client            | _Monitors Spot Nodes for termination notices by polling and notifies the GRPC Server_                  |
