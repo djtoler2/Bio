@@ -17,7 +17,7 @@
 
 ### SYSTEM COMPONENTS
 
-|System Components| <span style="width:300px">Component Role</span>  |
+|System Components| Component Role  |
 |-------|---|
 | Warm On-Demand Nodes   | _Run Pods at a set cost and are kept on standby (preconfigured, pre-tainted) to replace terminated Nodes_    |
 | Dummy Pods             | _Occupy space on Nodes and have low priority_                                                          |
