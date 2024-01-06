@@ -1,11 +1,9 @@
 # Table of Contents
-1. [Purpose](#purpose)
-2. [Issues](#issues)
-3. [Creating CICD Pipeline and Infrastructure](#create-cicd-pipeline-and-infrastructure)
-4. [Explaining CICD Pipeline and Infrastructure](#cicd-pipeline-and-infrastructure-explanation)
-5. [Application Successfully Deployed](#successful-deployment)
-6. [System Diagram](#system-diagram)
-7. [System Optimization](#system-optimization)
+1. [Objective](#objective)
+2. [System Components](#system-components)
+3. [Interactions](#interactions)
+4. [Requirements](#requirements)
+
 
 ---
 
