@@ -127,6 +127,7 @@
 ---
 
 ### _SYSTEM COMPONENT INTERACTIONS_
+##### _This is how the main components within our system interact with each other to meet our objective_
 
 |  Requestor | Responder  | Data |  Purpose |
 |---|---|---|---|
