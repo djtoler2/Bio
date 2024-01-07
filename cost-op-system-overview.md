@@ -213,6 +213,10 @@
 ### _SYSTEM DIAGRAM_
 <img src="https://github.com/djtoler2/Bio/blob/main/assets/cost-op/spot-node-process.png" width="1000">
 
-<img src="https://github.com/djtoler2/Bio/blob/main/assets/cost-op/Screenshot%202024-01-06%20at%208.42.04%20PM.png" width="1000">
+<img src="https://github.com/djtoler2/Bio/blob/main/assets/cost-op/Screenshot%202024-01-06%20at%208.29.29%20PM.png" width="1000">
 
 <img src="https://github.com/djtoler2/Bio/blob/main/assets/cost-op/Screenshot%202024-01-06%20at%208.40.34%20PM.png" width="1000">
+
+<img src="https://github.com/djtoler2/Bio/blob/main/assets/cost-op/Screenshot%202024-01-06%20at%208.42.04%20PM.png" width="1000">
+
+
