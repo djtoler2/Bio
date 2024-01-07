@@ -113,6 +113,7 @@
 
 
 ### _SYSTEM REQUIREMENTS_
+##### _These are th requirements for our system to successfully meet our objective_
 
 | Requirements  | Purpose  | 
 |---|---|
@@ -146,6 +147,7 @@
 ---
 
 ### _SYSTEM DATA_ 
+##### _This is the data needed for the system to make decisions in response to termination notices_
 | Resource                                  | Data                          |  Purpose    |    
 |-------------------------------------------|-------------------------------|--------------------|
 | Node                                      | Name/ID                       |  ID which Node to perform termination response process on |   
@@ -176,6 +178,7 @@
 ---
 
 ### _SYSTEM FUNCTIONS_
+##### _These are the main functions that will allows up to quickly respond to termination notices_
 
 <table>
   <tr>
