@@ -1,20 +1,21 @@
-# Table of Contents
+# _TABLE OF CONTENTS_
 1. [Objective](#objective)
 2. [System Components](#system-components)
-3. [Interactions](#interactions)
-4. [Requirements](#requirements)
-
-
----
-
-
-### OBJECTIVE
-* _Reduce cost of Kubernetes clusters by running Pods on Spot VMs while ensuring minimum service disruption_
+3. [System Requirements](#system-requirements)
+4. [System Component Interactions](#system-component-interactions)
+5. [System Data](#system-data)
+6. [System Functions](#system-functions)
+7. [System Diagram](#system-diagram)
 
 ---
 
-### SYSTEM COMPONENTS
-##### _These are the main components that interact with each other to trigger the response to a noticed or warning of a pendomg Spot Node termination_
+### _OBJECTIVE_
+* ##### Reduce cost of Kubernetes clusters by running Pods on Spot VMs while ensuring minimum service disruption
+
+---
+
+### _SYSTEM COMPONENTS_
+##### _These are the main components that interact with each other to trigger the response to a notice or warning of a pending AWS Spot Node termination_
 
 <table>
   <tr>
@@ -86,15 +87,23 @@
     <td>A collection of Spot instances we can strategically configure based on price, resource aggregation, availability, location, type...</td>
   </tr>
   <tr>
-    <td>Scheduler</td>
+    <td>Kubernetes Scheduler</td>
     <td>Place newly created Pods onto qualifying Nodes</td>
   </tr>
   <tr>
-    <td>API Server</td>
+    <td>Kubernetes API Server</td>
     <td>Supplies the GRPC Server with data about the Nodes & Pods</td>
   </tr>
   <tr>
     <td>Serverless Functions</td>
+    <td>Instantly accepts rerouted requests from terminated Nodes</td>
+  </tr>
+  <tr>
+    <td>Kubernetes PLEG & Sync Loop</td>
+    <td>Instantly accepts rerouted requests from terminated Nodes</td>
+  </tr>
+    <tr>
+    <td>Kubernetes C-Advisor & CRI</td>
     <td>Instantly accepts rerouted requests from terminated Nodes</td>
   </tr>
 </table>
@@ -102,58 +111,103 @@
 
 ---
 
-### Interactions
--Internal
 
--- CostOp App/Client & Database
+### _SYSTEM REQUIREMENTS_
 
--- CostOp App & API Server
+| Requirements  | Purpose  | 
+|---|---|---|
+| Run Pods on Spot Nodes with no downtime                                                                   | _Cost Optimization _ |  
+| Scheduling new Pods as fast as possible                                                                   | _Avoid service disruption _ |  
+| Making Nodes available for Pods to run on as fast as possible                                             | _Avoid service disruption _ |  
+| Getting termination notice updates as fast as possible                                                    | _Start the termination response process as fast as possible_  |  
+| Updating database                                                                                         |  _Quickly supply functions with data to make termination response decisions_ |  
+| Running termination response logic must efficiently stabalize request handling within 2 minutes           | __Avoid service disruption __  |  
 
--- CostOp App/Server & Database
+---
 
--- CostOp App/Server & Pods
+### _SYSTEM COMPONENT INTERACTIONS_
 
--- CostOp App/Server & Dummy Pods
+|  Requestor | Responder  | Data |  Purpose |
+|---|---|---|---|
+| GRPC Client  | AWS Spot Instance Endpoints        | _Spot Node Termination Notice_                            | Alert the GRPC Server of a Spot Node termination |
+| GRPC Server  | Redis                              | _Cluster Data & Metrics_                                  | Get & set the specs of all Nodes & data about the current Pod-Node Placements to use during TRP*|
+| GRPC Server  | Kubernetes API Server              | _Cluster Data & Metrics_                                  | Get the specs of all Nodes & data about the current Pod-Node Placements to use during TRP*|
+| GRPC Client  | GRPC Server                        | _ID Of The Node Being Terminated_                         | Inform the GRPC server which Spot Node to start the termination process on |
+| GRPC Server  | AWS Lambda API                     | _Serverless Function URL_                                 | Invoke serverless functions to respond to re-reouted requests from terminated Spot Nodes  |
+| GRPC Server  | AWS OnDemand Instances             | _Specs of the Spot Nodes_                                 | Dynamically assign an instance type to a stopped, warm On-Demand Node  |
+| GRPC Server  | AWS AutoScaling API                | _State Data about Spot Node AutoScalingGroups_            | Update Redis with current data about Spot Node groups |
+| GRPC Server  | AWS EC2 API                        | _Specs of the Spot Nodes_                                 | To create a warm, On-Demand Node for every running Spot Node  |
+| GRPC Server  | AWS EKS API                        | _Cluster name and AMI ID_                                 | Add the warm, On-Demand Node to a Cluster    |
+| GRPC Server  | AWS EBS API                        | _ID of EBS Volume of the Spot Node being terminated_      | Clone, detatch, attach or sync from one Node to another Node |
+| GRPC Server  | AWS Fargate API                    | _ID of Pods that are being rescheduled_                   | Temporarily accept rerouted requests from terminated Spot Nodes  |
+| GRPC Server  | Monitoring Source                  | _Cluster Metrics_                                         | Provide the system with data for makig decisions  |
+| Kubernetes Kublet  | Kubernetes API Server        | _Pod state data_                                          | Match the current state of Pods with desired state of Pods  |
 
--- CostOp App/Server & Load Balancer
+---
 
--Internal*
+### _SYSTEM DATA_ 
+| Resource                                  | Data                          |  Purpose    |    
+|-------------------------------------------|-------------------------------|--------------------|
+| Node                                      | Name/ID                       |  ID which Node to perform termination response process on |   
+| Node                                      | List of Pods                  |  Determine what to do with the Pods that are running on the Node being terminated    |   
+| Node                                      | Total CPU                     |  Custom Scheduling logic      |   
+| Node                                      | Available CPU                 |  Custom Scheduling logic   |   
+| Node                                      | Total Memory                  |  Custom Scheduling logic    |   
+| Node                                      | Available Memory              |  Custom Scheduling logic |   
+| Node                                      | Group                         |  Determine if the Node is a part of a AutoScaling group for scheduling logic|   
+| Node                                      | Group ID                      |  ID the group the Node is a part of|   |
+| Node                                      | Group Available Memory        |  Custom Scheduling logic |   
+| Node                                      | Group Total Memory            |  Custom Scheduling logic |   
+| Node                                      | Group Available CPU           |  Custom Scheduling logic |   
+| Node                                      | Group Total CPU               |  Custom Scheduling logic |   
+| Node                                      | Taints                        |  Response process logic |   
+| Node                                      | Labels                        |  Response process logic |   
+| Pods                                      | ID/Name                       |  ID which Pods need to be rescheduled or implemented in termination response |   
+| Pods                                      | List of containers            |  Determine which worksloads the Pod is responsbile for running and the dependency structure|   |
+| Pods                                      | Total Resources Required      |  Scheduling logic |   
+| Pods                                      | Node                          |  ID which Node the Pod is currently running on |   
+| Containers                                | ID/Name                       |  ID which workload is being ran |   
+| Containers                                | Total Resources Required      |  Determine how much resources each workload needs |   
+| Containers                                | List of functions             |  Determine what part of the workload is a Lambdas |   
+| Functions                                 | ID/Name                       |  ID which functions are Lambdas |   
+| Functions                                 | URL                           |  To invoke Lambdas to response to termination notices |   
+| Functions                                 | Total Resources Required      |  To determine how many requests each Lambda can process |   
 
--- Scheduler & Controllers
+---
 
--- Kublet & CAdvisor
+### _SYSTEM FUNCTIONS_
 
--- Kublet & PLEG
+<table>
+  <tr>
+    <th style="width: 600px;">Function</th>
+    <th style="width: 50px;">Purpose</th>
+  </tr>
+  <tr>
+    <td>Lambda Functions</td>
+    <td>Temporarily run serverless functions in response to termination notices</td>
+  </tr>
+  <tr>
+    <td>Fargate Pods</td>
+    <td>Temporarily run serverless Pods in response to termination notices</td>
+  </tr>
+    <tr>
+    <td>AutoScaling Pods</td>
+    <td>Horizontally scale & keep a minimum amount of Pods running at all times</td>
+  </tr>
+  <tr>
+    <td>Prioritized Pods</td>
+    <td>Use Pod prioritization to schedule Pods onto Nodes</td>
+  </tr>
+  <tr>
+    <td>Warm Nodes</td>
+    <td>Tenporarily run Pods on pre-configured, pre-tainted, stopped, standby On-Demand Nodes</td>
+  </tr>
+  <tr>
+    <td>Burstable Nodes</td>
+    <td>Temporarily vertically scale  Nodes to meet workload requirements</td>
+  </tr>
+</table>
 
--- Kublet & Sync
+---
 
--- Kubet & CRI
-
--External
-
--- CostOp App/Client & Spot Nodes
-
--- CostOp App/Server & Serverless Functions
-
--- CostOp App/Server & OnDemand Nodes
-
-### Requirements
-
--Functional
-
---Run Pods on Spot Nodes with no downtime
-
----Scheduling new Pods as fast as possible
-
----Making Nodes available for Pods to run on as fast as possible
-
----Getting termination notice updates as fast as possible
-
----Updating database
-
----Running termination response logic stabalize request handling within 2 minutes
-
--NonFunctional
-
---Termination response logic must have requests successfully re-routed within 2 minutes with no downtime 
-
+### _SYSTEM DIAGRAM_
