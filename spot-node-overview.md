@@ -115,7 +115,7 @@
 ### _SYSTEM REQUIREMENTS_
 
 | Requirements  | Purpose  | 
-|---|---|---|
+|---|---|
 | Run Pods on Spot Nodes with no downtime                                                                   | _Cost Optimization _ |  
 | Scheduling new Pods as fast as possible                                                                   | _Avoid service disruption _ |  
 | Making Nodes available for Pods to run on as fast as possible                                             | _Avoid service disruption _ |  
