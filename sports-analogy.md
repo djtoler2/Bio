@@ -2,12 +2,9 @@
 
 ### Engineering Team = League Office (Sets & alters rules of the game)
 
-As the engineering team, we function like the NBA League Office. We essentially set the rules for our Kubernetes system to abide by. Using yaml files and shell scripts, we can define where our workloads will run and how users will interact with our Pods.
+As an engineer or an engineering team working with Kubernetes, we function similar to the NBA League Office. We essentially set the rules for our Kubernetes system to abide by. Using yaml files and shell scripts, we can define where our workloads, where they'll run and how users will interact with our Pods.
 
-The NBA League Office defines how games are played (in-game rules, penalties, etc)and where teams will play (local broadcast, ESPN, TNT, geographic locations, etc…) using a rule book and having contracts with media outlets, franchises, and player organizations.
-
-
-### YAML files = Referee (Communicates the game/system rules to game participants/system components)
+In a similar way, the NBA League Office defines how games are played (in-game rules, penalties, etc)and where teams will play (local broadcast, ESPN, TNT, geographic locations, etc…) using a rule book and having contracts with media outlets, franchises, and player organizations.
 
 
 ### Control Plane = Front Office (Makes decisions to align the [cluster/franchises] current [state/business objective] with the [engineering team/league offices] desired state/business objective)
