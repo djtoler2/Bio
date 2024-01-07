@@ -211,3 +211,4 @@
 ---
 
 ### _SYSTEM DIAGRAM_
+<img src="path_to_image.jpg" width="300">
