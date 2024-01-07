@@ -132,7 +132,7 @@
 |  Requestor | Responder  | Data |  Purpose |
 |---|---|---|---|
 | GRPC Client  | AWS Spot Instance Endpoints        | _Spot Node Termination Notice_                            | Alert the GRPC Server of a Spot Node termination |
-| GRPC Server  | Redis                              | _Cluster Data & Metrics_                                  | Get & set the specs of all Nodes & data about the current Pod-Node Placements to use during TRP*|
+| GRPC Server  | Redis                              | _Cluster Data & Metrics_                                  | Get & set the specs of all Nodes & data about the current Pod-Node Placements to use during the termination response process|
 | GRPC Server  | Kubernetes API Server              | _Cluster Data & Metrics_                                  | Get the specs of all Nodes & data about the current Pod-Node Placements to use during TRP*|
 | GRPC Client  | GRPC Server                        | _ID Of The Node Being Terminated_                         | Inform the GRPC server which Spot Node to start the termination process on |
 | GRPC Server  | AWS Lambda API                     | _Serverless Function URL_                                 | Invoke serverless functions to respond to re-reouted requests from terminated Spot Nodes  |
