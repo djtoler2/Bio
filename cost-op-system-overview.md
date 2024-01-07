@@ -211,4 +211,4 @@
 ---
 
 ### _SYSTEM DIAGRAM_
-<img src="https://github.com/djtoler2/Bio/blob/main/assets/cost-op/spot-node-process.png" width="600">
+<img src="https://github.com/djtoler2/Bio/blob/main/assets/cost-op/spot-node-process.png" width="1000">
