@@ -1,16 +1,22 @@
 # _TABLE OF CONTENTS_
 1. [Objective](#objective)
+   ##### _What problems are we solving?_
 2. [System Components](#system-components)
+   ##### _What components make this system function?_
 3. [System Requirements](#system-requirements)
+   ##### _Whats required to make this system function successfully?_
 4. [System Component Interactions](#system-component-interactions)
+   #### _How do the system components interact with each other to reach the objective_
 5. [System Data](#system-data)
+    ##### _What data does our system need to reach the objective?_
 6. [System Functions](#system-functions)
+    ##### _What main functions run to allow our system to reach the objective?_
 7. [System Diagram](#system-diagram)
 
 ---
 
 ### _OBJECTIVE_
-* ##### Reduce cost of Kubernetes clusters by running Pods on Spot VMs while ensuring minimum service disruption
+##### _Reduce cost of Kubernetes clusters by running Pods on Spot VMs while ensuring minimum service disruption_
 
 ---
 
