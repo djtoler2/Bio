@@ -9,7 +9,7 @@
 
 ---
 
-### _OBJECTIVE_
+### <ins>_OBJECTIVE_</ins>
 ##### _Reduce cost of Kubernetes clusters by running Pods on Spot VMs while ensuring minimum service disruption_
 
 ---
