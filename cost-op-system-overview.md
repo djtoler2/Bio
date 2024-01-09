@@ -14,7 +14,7 @@
 
 ---
 
-### _SYSTEM COMPONENTS_
+### <ins>_SYSTEM COMPONENTS_</ins>
 ##### _These are the main components that interact with each other to trigger the response to a notice or warning of a pending AWS Spot Node termination_
 
 <table>
@@ -112,7 +112,7 @@
 ---
 
 
-### _SYSTEM REQUIREMENTS_
+### <ins>_SYSTEM REQUIREMENTS_</ins>
 ##### _These are th requirements for our system to successfully meet our objective_
 
 | Requirements  | Purpose  | 
@@ -126,7 +126,7 @@
 
 ---
 
-### _SYSTEM COMPONENT INTERACTIONS_
+### <ins>_SYSTEM COMPONENT INTERACTIONS_</ins>
 ##### _This is how the main components within our system interact with each other to meet our objective_
 
 |  Requestor | Responder  | Data |  Purpose |
@@ -147,7 +147,7 @@
 
 ---
 
-### _SYSTEM DATA_ 
+### <ins>_SYSTEM DATA_</ins>
 ##### _This is the data needed for the system to make decisions in response to termination notices_
 | Resource                                  | Data                          |  Purpose    |    
 |-------------------------------------------|-------------------------------|--------------------|
@@ -178,7 +178,7 @@
 
 ---
 
-### _SYSTEM FUNCTIONS_
+### <ins>_SYSTEM FUNCTIONS_</ins>
 ##### _These are the main functions that will allows up to quickly respond to termination notices_
 
 <table>
@@ -214,7 +214,7 @@
 
 ---
 
-### _SYSTEM DIAGRAM_
+### <ins>_SYSTEM DIAGRAM_</ins>
 <img src="https://github.com/djtoler2/Bio/blob/main/assets/cost-op/spot-node-process.png" width="1000">
 
 <img src="https://github.com/djtoler2/Bio/blob/main/assets/cost-op/Screenshot%202024-01-06%20at%208.29.29%20PM.png" width="1000">
