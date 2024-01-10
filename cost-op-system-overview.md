@@ -1,11 +1,12 @@
 # _TABLE OF CONTENTS_
 1. [Objective](#objective): _What problems are we solving?_
 2. [System Components](#system-components): _What components make this system function?_
-3. [System Requirements](#system-requirements): _Whats required to make this system function successfully?_
-4. [System Component Interactions](#system-component-interactions): _How do the system components interact with each other to reach the objective_
-5. [System Data](#system-data): _What data does our system need to reach the objective?_
-6. [System Functions](#system-functions): _What main functions run to allow our system to reach the objective?_
-7. [System Diagram](#system-diagram)
+3. [System Steps](#system-steps): _Whats required to make this system function successfully?_
+4. [System Requirements](#system-requirements): _Whats required to make this system function successfully?_
+5. [System Component Interactions](#system-component-interactions): _How do the system components interact with each other to reach the objective_
+6. [System Data](#system-data): _What data does our system need to reach the objective?_
+7. [System Functions](#system-functions): _What main functions run to allow our system to reach the objective?_
+8. [System Diagram](#system-diagram)
 
 ---
 
@@ -108,12 +109,75 @@
   </tr>
 </table>
 
+---
+
+### <ins>_System Steps_</ins>
+##### _The automated steps that the system is designed to take when responding to a Spot Node termination notice_
+
+<table>
+    <tr>
+        <th style="width: 600px;">Step #</th>
+        <th style="width: 50px;">Step</th>
+    </tr>
+    <tr>
+        <td>01</td>
+        <td>Poll Spot Node endpoint for termination notices, repeat this step until termination notice is recieved</td>
+    </tr>
+        <tr>
+        <td>02</td>
+        <td>Poll Redis for current / real-time Cluster data</td>
+    </tr>
+    <tr>
+        <td>02</td>
+        <td>Taint the Node</td>
+    </tr>
+    <tr>
+        <td>03(a)</td>
+        <td>Add tolerations or lables to Pods</td>
+    </tr>
+        <tr>
+        <td>03(b)</td>
+        <td>Remove or re-schedule Pods</td>
+    </tr>
+    <tr>
+        <td>04</td>
+        <td>Remove or clone EBS Volume</td>
+    </tr>
+    <tr>
+        <td>05</td>
+        <td>Attach removed or cloned volume to new Spot Instace</td>
+    </tr>
+    <tr>
+        <td>06(a)</td>
+        <td>If Lambda functions are available, redirect requests to Lambda functions </td>
+    </tr>
+    <tr>
+        <td>06(b)</td>
+        <td>If Pods will be rescheduled, run HPA & Pod prioritization functions</td>
+    </tr>
+    <tr>
+        <td>06(c)</td>
+        <td>If Warm Nodes are available, run the Warm Nodes function</td>
+    </tr>
+    <tr>
+        <td>06(d)</td>
+        <td>If Burstable Nodes are avilable, use Cluster data from Redis & run Burstable Nodes function</td>
+    </tr>
+    <tr>
+        <td>07</td>
+        <td>Wait for ASG to find new Spot Nodes</td>
+    </tr>
+    <tr>
+        <td>08</td>
+        <td>Reroute requests again, based on which strategy was used </td>
+    </tr>
+</table>
 
 ---
 
 
 ### <ins>_SYSTEM REQUIREMENTS_</ins>
-##### _These are th requirements for our system to successfully meet our objective_
+##### _These are the requirements for our system to successfully meet our objective_
 
 | Requirements  | Purpose  | 
 |---|---|
@@ -200,7 +264,7 @@
   </tr>
   <tr>
     <td>Prioritized Pods</td>
-    <td>Use Pod prioritization to schedule Pods onto Nodes</td>
+    <td>Use Pod prioritization or "Dummy Pod strategy" to schedule Pods onto Nodes</td>
   </tr>
   <tr>
     <td>Warm Nodes</td>
