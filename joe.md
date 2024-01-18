@@ -1,5 +1,5 @@
 ## Problem
-#### Spending unecessary money on EC2 instances
+#### Spending unecessary money on EC2 instances because most users just use On-Demand instances and pay as they go instead of Spot instances
 
 ## Objective
 #### Save money on cloud expenses by reducing the cost of EC2 instances (which are the main expenses in cloud infrastructure)
