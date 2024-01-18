@@ -119,3 +119,8 @@ Warm Nodes: https://github.com/djtoler2/Bio/tree/main
 Pod prioritization: Tagging a Pod with a high priority. When a priority tagged Pod needs to be scheduled to run on an Instance, it’ll kick a low priority Pod off the Instance and take its place.
 
 Dummy Pods: Placing empty Pods on a Instance and allocating resources to them, then running the Linux “pause” process to make those allocated resources available to everything else on the server
+
+SOLUTION SYSTEM DIAGRAM: https://github.com/djtoler2/Bio/blob/main/cost-op-system-overview.md#system-diagram
+
+Other Info about the solution system: https://github.com/djtoler2/Bio/blob/main/cost-op-system-overview.md
+
