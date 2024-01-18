@@ -6,7 +6,10 @@
 
 ## How:
 #### Use first principals thinking to breakdown all of the things involved into its features/components the build a solution for the objective from the ground up with the features and components available to us through the things were using.
-#### For us, its EC2  instances / Kubernetes Nodes, Kubernetes Pods, EC2 spot instances,
+#### For us, its EC2  instances / Kubernetes Nodes, Kubernetes Pods, EC2 spot instances
+#### We break down EC2 instances into their features and components and figure out how we can use them to build a solution to save money on cloud expenses by reducing the cost of EC2 instances
+
+---
 
 ### EC2 Features / Components
 
