@@ -111,6 +111,7 @@ OUR SOLUTION SYSTEM:
     <td>Burstable Nodes</td>
     <td>Temporarily vertically scale  the instances we already have in our cluster to meet workload requirements</td>
    <td>This can be a fast way for the instances to accept the AutoScaled Pods and handle the requests until the ASG finds us another Spot Instance to use </td>
+    <td>For instances in the T family only</td>
   </tr>
 </table>
 
