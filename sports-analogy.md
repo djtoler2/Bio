@@ -35,7 +35,7 @@
 ## _The Kubernetes system & NBA analogy_
 
 ### Engineering Team = NBA League Office 
-#### _(Sets & alters rules of the game)_
+##### _Sets & alters rules of the game_
 
 > #### As an engineer or an engineering team working with Kubernetes, we function similar to the NBA League Office. We essentially set the rules for our Kubernetes system to abide by. Using yaml files and shell scripts, we can define where our workloads, where they'll run and how users will interact with our Pods.
 
