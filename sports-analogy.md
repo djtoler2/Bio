@@ -8,7 +8,7 @@
 #### Theres is a lot going on, to say the least... but in this article, we'll think about it from a different basketball angle and make it a lot simpler.
 
 
-## <span style="color:blue"> _Thinking differently about Kubernetes_</span>
+## _Thinking differently about Kubernetes_
 #### To simplify our understanding of Kubernetes, we'll use "analogous thinking". 
 
 #### Analogous thinking is a thinking process that allows us to draw commonalities between unrelated things and to see how seemingly unrelated things can actually have the same underlying structure
@@ -33,7 +33,9 @@
 #### Now, here's how the Kubernetes system correaltes to an NBA organization?
 
 ## _The Kubernetes system & NBA analogy_
-### Engineering Team = NBA League Office (Sets & alters rules of the game)
+<span style="color:blue">The Kubernetes system & NBA analogy</span>
+### Engineering Team = NBA League Office 
+#### _(Sets & alters rules of the game)_
 
 #### As an engineer or an engineering team working with Kubernetes, we function similar to the NBA League Office. We essentially set the rules for our Kubernetes system to abide by. Using yaml files and shell scripts, we can define where our workloads, where they'll run and how users will interact with our Pods.
 
