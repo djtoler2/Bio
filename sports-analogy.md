@@ -34,10 +34,6 @@
 
 ## _The Kubernetes system & NBA analogy_
 
-<div style="background-color: #FFFF00">Highlighted text</div>
-
-<span style="background-color: yellow;">Highlighted Text</span>
-
 ### Engineering Team = NBA League Office 
 #### _(Sets & alters rules of the game)_
 
