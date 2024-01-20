@@ -1,6 +1,6 @@
 # Kubernetes Sports Analogy
 
-
+## Is Kubernetes really hard?
 #### In the world of cloud computing, Kubernetes has a reputation for its complexity and its learning curve. 
 
 #### Its a powerful, automated system full of unique, dynamically interconnected components with distint roles that all work together to orchestrate layers of abstracted resources. Most of those resources can all unpredictably die, multiply, malfunction or change at any given moment.  
@@ -8,21 +8,21 @@
 #### Theres is a lot going on, to say the least... but in this article, we'll think about it from a different basketball angle and make it a lot simpler.
 
 
-### _Thinking differently about Kubernetes_
+## _Thinking differently about Kubernetes_
 #### To simplify our understanding of Kubernetes, we'll use "analogous thinking". 
 
 #### Analogous thinking is a thinking process that allows us to draw commonalities between unrelated things and to see how seemingly unrelated things can actually have the same underlying structure
 
 #### Using an analogous thinking framework, we can map the concepts of Kubernetes to something we are already familiar with, gain a solid understanding of how Kubernetes works and how to use it. 
 
-### _Kubernetes as an NBA organization_
+## _Kubernetes as an NBA organization_
 #### As a life-long fan of basketball, seeing Kubernetes through the lens of an NBA organization made grasping this technology much easier.
 
 #### First, we start by defining the purpose of the Kubernetes system and identifying the components that work together to carry out this purpose.
 
 #### Then, we figure out what part of an NBA organization would similarly match the role that each component is playing inside the Kubernetes system. 
 
-### _The purpose of Kubernetes_
+## _The purpose of Kubernetes_
 #### Kubernetes is a system that orchestrates containerized applications. We'll give a basic, high-level overview of how Kubernetes works
 #### We start with an engineering team and some application code.
 #### Our application code gets packaged (with its dependencies & our choice of OS implementation) into an image thats used to build a container
@@ -32,7 +32,7 @@
 
 #### Now, here's how the Kubernetes system correaltes to an NBA organization?
 
-### _The Kubernetes system & NBA analogy_
+## _The Kubernetes system & NBA analogy_
 ### Engineering Team = NBA League Office (Sets & alters rules of the game)
 
 #### As an engineer or an engineering team working with Kubernetes, we function similar to the NBA League Office. We essentially set the rules for our Kubernetes system to abide by. Using yaml files and shell scripts, we can define where our workloads, where they'll run and how users will interact with our Pods.
@@ -145,8 +145,8 @@
 
 #### In the same way, an usher will check a fan's ticket to know how to guide them to their seat, the KubeProxy checks the ClusterIp of a service to know where to send that user's request.
 
-### _Kubernetes Simplified_
-#### We now have a clearer understanding of what Kubernetes is and how it works.
+## _Kubernetes Simplified_
+#### We now have a simplified understanding of what Kubernetes is and how it works.
 
 #### By mapping the components of Kubernetes to the different roles within an NBA organization, we've created an analogous framework that we can reference anytime we’re working with Kubernetes 
 
