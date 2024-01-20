@@ -33,7 +33,7 @@
 #### Now, here's how the Kubernetes system correaltes to an NBA organization?
 
 ## _The Kubernetes system & NBA analogy_
-<span style="color:blue">The Kubernetes system & NBA analogy</span>
+<mark >The Kubernetes system & NBA analogy</mark>
 ### Engineering Team = NBA League Office 
 #### _(Sets & alters rules of the game)_
 
