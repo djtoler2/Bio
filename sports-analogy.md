@@ -1,6 +1,6 @@
 # Kubernetes Sports Analogy
 
-## Is Kubernetes really hard?
+## How hard is Kubernetes?
 #### In the world of cloud computing, Kubernetes has a reputation for its complexity and its learning curve. 
 
 #### Its a powerful, automated system full of unique, dynamically interconnected components with distint roles that all work together to orchestrate layers of abstracted resources. Most of those resources can all unpredictably die, multiply, malfunction or change at any given moment.  
@@ -42,19 +42,20 @@
 > #### In a similar way, the NBA League Office defines how games are played (in-game rules, penalties, etc)and where teams will play (local broadcast, ESPN, TNT, geographic locations, etc…) using a rule book and having contracts with media outlets, franchises, and player organizations.
 
 
-### Control Plane = NBA Team Front Office (Makes decisions to align the [cluster/franchises] current [state/business objective] with the [engineering team/league offices] desired state/business objective)
+### Control Plane = NBA Team Front Office 
+##### _Makes decisions to align the [Kubernetes cluster / NBA franchises] current [state / business objective] with the [ Kubernetes engineering team / NBA league office's] desired state / business objective_
 
-#### Every Kubernetes cluster runs with a control plane and the control plane acts as the brains of the entire cluster. Every control plane comes with 4 components.
+> #### Every Kubernetes cluster runs with a control plane and the control plane acts as the brains of the entire cluster. Every control plane comes with 4 components.
 
-##### - The API server (manages cluster updates)
+- ##### API server: _Manages cluster updates_
 
-##### - etc(hold all information about the current state of the cluster),
+- ##### etcd: _Holds all information about the current state of the cluster_
 
-##### - scheduler(decides which pods our nodes should run on),
+- ##### Scheduler: _Decides which pods our nodes should run on_
 
-##### - controller manager(adjusts resources to match the actual cluster state to the desired cluster state).
+- ##### Controller Manager: _Adjusts resources to match the actual cluster state to the desired - cluster state_
 
-##### - cloud controller manager (additional controller manager if you're using a cloud provider)
+- ##### Cloud Controller Manager: _Additional controller manager if you're using a cloud provider_
 
 #### This cluster architecture is similar to how every NBA team has a front office with analogous roles.
 
