@@ -1,7 +1,7 @@
 # Kubernetes Sports Analogy
 
 ## _The complexity of Kubernetes_
-#### _In the world of cloud computing, Kubernetes has a reputation for its complexity and its learning curve. _
+#### _In the world of cloud computing, Kubernetes has a reputation for its complexity and its learning curve._
 
 #### _Its a powerful, automated system full of unique, dynamically interconnected components with distint roles that all work together to orchestrate multiple layers of abstracted resources... and most of those resources can all unpredictably die, multiply, malfunction or change at any given moment._  
 
@@ -14,7 +14,7 @@
 
 #### _Analogous thinking is a thinking process. It allows us to draw commonalities between things that appear unrelated and _see_ how seemingly unrelated things can actually have the same underlying structure._
 
-#### _Using an analogous thinking framework, we can map the concepts of Kubernetes to something we are already familiar with, gain a solid understanding of how Kubernetes works and how to use it. _
+#### _Using an analogous thinking framework, we can map the concepts of Kubernetes to something we are already familiar with, gain a solid understanding of how Kubernetes works and how to use it._
 
 ---
 
@@ -23,7 +23,7 @@
 
 #### _First, we start by defining the purpose of the Kubernetes system and identifying the components that work together to carry out this purpose._
 
-#### _Then, we figure out what part of an NBA organization aligns with the role that each component is playing inside the Kubernetes system. _
+#### _Then, we figure out what part of an NBA organization aligns with the role that each component is playing inside the Kubernetes system._
 
 ---
 
