@@ -46,7 +46,7 @@
 
 ## _The Kubernetes system & NBA analogy_
 
-### <ins>Engineering Team = NBA League Office</ins>
+- ### <ins>Engineering Team = NBA League Office</ins>
 ##### _Sets & alters rules of the game_
 
 > #### As an engineer or an engineering team working with Kubernetes, we function similar to the NBA League Office. We essentially set the rules for our Kubernetes system to abide by. Using yaml files and shell scripts, we can define where our workloads, where they'll run and how users will interact with our Pods.
@@ -54,8 +54,8 @@
 > #### In a similar way, the NBA League Office defines how games are played (in-game rules, penalties, etc)and where teams will play (local broadcast, ESPN, TNT, geographic locations, etc…) using a rule book and having contracts with media outlets, franchises, and player organizations.
 
 
-### Control Plane = NBA Team Front Office 
-##### _Makes decisions to align the [Kubernetes cluster / NBA franchises] current [state / business objective] with the [ Kubernetes engineering team / NBA league office's] desired state / business objective_
+### <ins>Control Plane = NBA Team Front Office</ins>
+- ##### _Makes decisions to align the [Kubernetes cluster / NBA franchises] current [state / business objective] with the [ Kubernetes engineering team / NBA league office's] desired state / business objective_
 
 > #### Every Kubernetes cluster runs with a control plane and the control plane acts as the brains of the entire cluster. Every control plane comes with 4 components.
 
