@@ -157,7 +157,7 @@
 
 ##### - _Or how the PLEG detects changes in the state of the containers and may trigger a restart event, a shooting coach may notice a drop in a player's shooting percentage and trigger sometime in the gym doing shooting drills with the players to readjust their shooting form and get them back performing as expected._
 
-##### _The kublet also has health check functionalities that can be compared to an NBA team's medical staff._
+#### _The kublet also has health check functionalities that can be compared to an NBA team's medical staff._
 
 ##### _Simply put, Kubernetes polls the /healthz endpoint of a pod and can render them ready or not ready depending on the response. Similar to how a team medical staff can have an injured player do game-related drills to determine if they’re cleared to play or listed as unavailable._
 
