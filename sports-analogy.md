@@ -91,13 +91,13 @@
 
 ##### We could also have 4 additional “sidecar” containers.
 
-###### - A proxy container that routes requests to backend container endpoints
+##### - _A proxy container that routes requests to backend container endpoints_
 
-##### - A container that logs data from the backend container
+##### - _A container that logs data from the backend container_
 
-##### - A container receives logs to do real-time data processing container
+##### - _A container receives logs to do real-time data processing container_
 
-##### - A container stores the processed data in a cache container
+##### - _A container stores the processed data in a cache container_
 
 #### This closely resembles an NBA team architecture where a 1-star player that may be an exceptional shooter would have 4 additional teammates where 1 is a versatile defender that allows the shooter to conserve energy for shooting, 2 is a playmaker that can create shooting opportunities for the shooter, 3 is an offensive rebounder and 4 is a 7ft inside scorer. Both the NBA team and Kubernetes Pod apply the same architectural model of a main entity surrounded by supporting entities.
 
