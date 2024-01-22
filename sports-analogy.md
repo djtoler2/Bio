@@ -159,7 +159,7 @@
 
 #### _The kublet also has health check functionalities that can be compared to an NBA team's medical staff._
 
-##### _Simply put, Kubernetes polls the /healthz endpoint of a pod and can render them ready or not ready depending on the response. Similar to how a team medical staff can have an injured player do game-related drills to determine if they’re cleared to play or listed as unavailable._
+#### _Simply put, Kubernetes polls the /healthz endpoint of a pod and can render them ready or not ready depending on the response. Similar to how a team medical staff can have an injured player do game-related drills to determine if they’re cleared to play or listed as unavailable._
 
 
 ### <ins>App Traffic = Fans</ins>
