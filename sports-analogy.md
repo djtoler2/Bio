@@ -131,7 +131,7 @@
 ### <ins>Kublet = Coaching & Medical staff</ins>
 ##### _Responsible for management of teams-players/pods-containers_
 
-> ###### _`Kublet has over a dozen internal components that work together to match the current pod/container state to the desired pod/container state`_
+> ##### _Kublet has over a dozen internal components that work together to match the current pod/container state to the desired pod/container state`_
 
 #### Coaching Staff
 
