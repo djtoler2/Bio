@@ -1,6 +1,7 @@
 # Kubernetes Sports Analogy
 
 ## _The complexity of Kubernetes_
+<p align="left"><img src="https://github.com/djtoler2/Bio/blob/main/assets/cost-op/DALL·E%202024-01-22%2015.50.32%20-%20Create%20a%20detailed%20analogous%203D%20realistic%20illustration%20of%20a%20representation%20of%20an%20AWS%20EC2%20node%20being%20used%20as%20an%20analogy%20to%20an%20NBA%20arena.png" width="500"></p>
 #### _In the world of cloud computing, Kubernetes has a reputation for its complexity and its learning curve._
 
 #### _Its a powerful, automated system full of unique, dynamically interconnected components with distint roles that all work together to orchestrate multiple layers of abstracted resources... and most of those resources can all unpredictably die, multiply, malfunction or change at any given moment._  
@@ -91,6 +92,7 @@
 
 ### <ins>Containers = Players</ins> 
 ##### _Entertain the fans/application users_
+<p align="left"><img src="https://github.com/djtoler2/Bio/blob/main/assets/cost-op/container-players.png" width="500"></p>
 
 > #### A Docker container running inside Kubernetes can be likened to an individual player. 
 > #### The comtainers packaged dependencies are deployed, possessing a core functionality defined by the `image` that was used to build it. 
