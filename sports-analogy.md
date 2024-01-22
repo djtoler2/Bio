@@ -46,7 +46,7 @@
 
 ## _The Kubernetes system & NBA analogy_
 
-- ### <ins>Engineering Team = NBA League Office</ins>
+### <ins>Engineering Team = NBA League Office</ins>
 ##### _Sets & alters rules of the game_
 
 > #### As an engineer or an engineering team working with Kubernetes, we function similar to the NBA League Office. We essentially set the rules for our Kubernetes system to abide by. Using yaml files and shell scripts, we can define where our workloads, where they'll run and how users will interact with our Pods.
@@ -55,9 +55,9 @@
 
 
 ### <ins>Control Plane = NBA Team Front Office</ins>
-- ##### _Makes decisions to align the [Kubernetes cluster / NBA franchises] current [state / business objective] with the [ Kubernetes engineering team / NBA league office's] desired state / business objective_
+##### _Makes decisions to align the current state / business objective with the desired state / business objective (which is set by the Engineering Team / NBA League Office)_
 
-> #### Every Kubernetes cluster runs with a control plane and the control plane acts as the brains of the entire cluster. Every control plane comes with 4 components.
+> #### Every Kubernetes cluster comes with a `control plane` and the control plane acts as the brains of the entire cluster. Every control plane comes with 4 components.
 
 - ##### API server: _Manages cluster updates_
 
@@ -65,11 +65,11 @@
 
 - ##### Scheduler: _Decides which pods our nodes should run on_
 
-- ##### Controller Manager: _Adjusts resources to match the actual cluster state to the desired - cluster state_
+- ##### Controller Manager: _Adjusts resources to match the actual cluster state to the desired cluster state_
 
 - ##### Cloud Controller Manager: _Additional controller manager if you're using a cloud provider_
 
-#### This cluster architecture is similar to how every NBA team has a front office with analogous roles.
+#### The architecture of a Kubernetes cluster is similar to how every NBA team has a front office with analogous roles.
 
 ##### - The franchise's analyst team is like the Etcd. All modern NBA organizations have an analyst team that keeps data about the franchise and that data is used to make decisions throughout the franchise, just like etcd data is used to make decisions throughout the cluster.
 
@@ -80,7 +80,8 @@
 ##### - The VP of Basketball Operations is functions very similar to the controller manager
 
 
-### Cluster = Team Franchise (The entire organization of game/system components)
+### <ins>Cluster = Team Franchise</ins>
+##### _The entire organization of the games/systems components_
 
 #### Inside the Kubernetes cluster, we have all of the components necessary to service requests.
 
@@ -88,12 +89,14 @@
 
 #### The Kublet keeps our Pods and containers running and the control place is the brains of it all. Information about the cluster components is stored here and decisions about where to run Pods are made here too.
 
-### Containers = Players (Entertain the fans/application users)
+### <ins>Containers = Players</ins> 
+##### _Entertain the fans/application users_
 
 #### A Docker container running inside Kubernetes can be likened to an individual player. Its packaged dependencies are deployed, possessing a core functionality defined by the image that was used to build it. In the same way, a player can be looked at as a package of skill sets, attributes, and abilities that are used for a core functionality. These individual players can also be grouped to form a team that specializes in defense, similar to how individual containers could be grouped to form a backend app that uses data that’s processed in real-time.
 
 
-### Pods = Teams (Groups of players/containers)
+### <ins>Pods = Teams</ins> 
+##### _Groups of players/containers_
 
 #### A Kubernetes pod can be compared to an NBA team because pods are groups of containers and like the analogy above, containers can be likened to individual players. And just like an NBA team usually doesn’t have players with identical skill sets, a Pod typically doesn’t encapsulate identical containers.
 
@@ -114,7 +117,9 @@
 #### This closely resembles an NBA team architecture where a 1-star player that may be an exceptional shooter would have 4 additional teammates where 1 is a versatile defender that allows the shooter to conserve energy for shooting, 2 is a playmaker that can create shooting opportunities for the shooter, 3 is an offensive rebounder and 4 is a 7ft inside scorer. Both the NBA team and Kubernetes Pod apply the same architectural model of a main entity surrounded by supporting entities.
 
 
-### Kublet = Coaching & medical staff (Responsible for management of teams-players/pods-containers (sublet has over a dozen internal components that work together to match the current pod/container state to the desired pod/container state))
+### <ins>Kublet = Coaching & Medical staff</ins>
+##### _Responsible for management of teams-players/pods-containers_
+###### _`Kublet has over a dozen internal components that work together to match the current pod/container state to the desired pod/container state`_
 
 #### Coaching Staff
 
@@ -145,14 +150,16 @@
 ##### Simply put, Kubernetes polls the /healthz endpoint of a pod and can render them ready or not ready depending on the response. Similar to how a team medical staff can have an injured player do game-related drills to determine if they’re cleared to play or listed as unavailable.
 
 
-### App Traffic = Fans (The people, interacting without containerized app/coming to see players)
+### <ins>App Traffic = Fans</ins>
+#####  _The people, interacting without containerized app/coming to see players_
 
 #### Every NBA arena has fans in the stands and every app has users. An NBA fan comes to the arena to watch teams and players, the same way a user comes to the internet to interact with our containers and pods by using our app.
 
 #### Our applications are designed to engage our users much like NBA games are designed to entertain fans.
 
 
-### KubeProxy = Arena Ushers (Responsible for routing fans/traffic to their designated areas)
+### <ins>KubeProxy = Arena Ushers</ins>
+##### _Responsible for routing fans/traffic to their designated areas_
 
 #### Every NBA game is held in an arena staffed with ushers. You can find them in the stands waiting for a request from a fan to help find their seat…
 
@@ -161,7 +168,7 @@
 #### In the same way, an usher will check a fan's ticket to know how to guide them to their seat, the KubeProxy checks the ClusterIp of a service to know where to send that user's request.
 
 ## _Kubernetes Simplified_
-#### We now have a simplified understanding of what Kubernetes is and how it works.
+#### We now have a more simplified understanding of what Kubernetes is and how it works.
 
 #### By mapping the components of Kubernetes to the different roles within an NBA organization, we've created an analogous framework that we can reference anytime we’re working with Kubernetes 
 
