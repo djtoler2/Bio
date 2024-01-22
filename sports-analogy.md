@@ -1,40 +1,52 @@
 # Kubernetes Sports Analogy
 
-## How hard is Kubernetes?
+## _The complexity of Kubernetes_
 #### In the world of cloud computing, Kubernetes has a reputation for its complexity and its learning curve. 
 
-#### Its a powerful, automated system full of unique, dynamically interconnected components with distint roles that all work together to orchestrate layers of abstracted resources. Most of those resources can all unpredictably die, multiply, malfunction or change at any given moment.  
+#### Its a powerful, automated system full of unique, dynamically interconnected components with distint roles that all work together to orchestrate multiple layers of abstracted resources... and most of those resources can all unpredictably die, multiply, malfunction or change at any given moment.  
 
-#### Theres is a lot going on, to say the least... but in this article, we'll think about it from a different basketball angle and make it a lot simpler.
+#### Theres is a lot going on in the Kubernetes system, to say the least... but in this article, we'll think about it from a differently, from basketball angle and make it a lot simpler.
 
+---
 
 ## _Thinking differently about Kubernetes_
 #### To simplify our understanding of Kubernetes, we'll use "analogous thinking". 
 
-#### Analogous thinking is a thinking process that allows us to draw commonalities between unrelated things and to see how seemingly unrelated things can actually have the same underlying structure
+#### Analogous thinking is a thinking process. It allows us to draw commonalities between things that appear unrelated and _see_ how seemingly unrelated things can actually have the same underlying structure.
 
 #### Using an analogous thinking framework, we can map the concepts of Kubernetes to something we are already familiar with, gain a solid understanding of how Kubernetes works and how to use it. 
+
+---
 
 ## _Kubernetes as an NBA organization_
 #### As a life-long fan of basketball, seeing Kubernetes through the lens of an NBA organization made grasping this technology much easier.
 
 #### First, we start by defining the purpose of the Kubernetes system and identifying the components that work together to carry out this purpose.
 
-#### Then, we figure out what part of an NBA organization would similarly match the role that each component is playing inside the Kubernetes system. 
+#### Then, we figure out what part of an NBA organization aligns with the role that each component is playing inside the Kubernetes system. 
+
+---
 
 ## _The purpose of Kubernetes_
 #### Kubernetes is a system that orchestrates containerized applications. We'll give a basic, high-level overview of how Kubernetes works
+
 #### We start with an engineering team and some application code.
-#### Our application code gets packaged (with its dependencies & our choice of OS implementation) into an image thats used to build a container
+
+#### Our application code gets packaged (with its dependencies & our choice of OS implementation) into an image thats used to build a container.
+
 #### Kubernetes comes into the picture and encapsulates our containers into a Pod (a logical grouping of 1 or more containers)
-#### A Pod runs on Node (simply an EC2 instance) and with that, we're now running our app in Kubernetes.
+
+#### A Pod runs on a Node (simply an EC2 instance) and with that, we're now running our app in Kubernetes.
+
 #### Kubernetes is self-healing, meaning that if we tell it we want 4 pods (4 instances of our application), the Control Plane and the Kublet will communincate with each other through the Kubernetes API server to always make sure we have 4 Pods running.
 
 #### Now, here's how the Kubernetes system correaltes to an NBA organization?
 
+---
+
 ## _The Kubernetes system & NBA analogy_
 
-### Engineering Team = NBA League Office 
+### <ins>Engineering Team = NBA League Office</ins>
 ##### _Sets & alters rules of the game_
 
 > #### As an engineer or an engineering team working with Kubernetes, we function similar to the NBA League Office. We essentially set the rules for our Kubernetes system to abide by. Using yaml files and shell scripts, we can define where our workloads, where they'll run and how users will interact with our Pods.
