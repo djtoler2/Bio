@@ -118,7 +118,7 @@
 
 ##### - _Another container that stores the processed data in memory for quick access_
 
-#### This closely resembles an NBA teams _`starting 5`_ architecture, where a single star player, that may be an exceptional shooter, would have 4 additional teammates where...
+#### This closely resembles an NBA teams `starting 5` architecture, where a single star player, that may be an exceptional shooter, would have 4 additional teammates where...
 
 ##### _1 is a versatile defender that allows the shooter to conserve energy for shooting_
 ##### _2 is a playmaker that can create shooting opportunities for the shooter_
