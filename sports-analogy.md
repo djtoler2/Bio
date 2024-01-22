@@ -173,9 +173,7 @@
 ### <ins>KubeProxy = Arena Ushers</ins>
 ##### _Responsible for routing fans/traffic to their designated areas_
 
-> #### Every NBA game is held in an arena staffed with ushers. You can find them in the stands waiting for a request from a fan to help find their seat…
-
-> #### The KubeProxy functions like an usher in an NBA arena because you find it inside our Kubernetes system, waiting for a request from our ingress to find our frontend service.
+> #### Every NBA game is held in an arena staffed with ushers. You can find them in the stands waiting for a request from a fan to help find their seat… The KubeProxy functions like an usher in an NBA arena because you find it inside our Kubernetes system, waiting for a request from our ingress to find our frontend service.
 
 > #### In the same way, an usher will check a fan's ticket to know how to guide them to their seat, the KubeProxy checks the ClusterIp of a service to know where to send that user's request.
 
